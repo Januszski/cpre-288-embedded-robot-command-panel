@@ -2,21 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
+/* :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
-}
+} */
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 0, 0, 0;
   }
-}
+} */
 
-body {
+/* body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
       to bottom,
@@ -24,10 +24,48 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
-}
+} */
 
-@layer utilities {
+/* @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+} */
+.target {
+  --b: 0.5em;
+  --c: 3em;
+  --r: 2em;
+  position: relative;
+  margin: 1em auto;
+  border: solid var(--b) transparent;
+  padding: 1em;
+  max-width: 23em;
+  font: 1.25em ubuntu, sans-serif;
+
+  &::before {
+    position: absolute;
+    z-index: -1;
+    inset: calc(-1 * var(--b));
+    border: inherit;
+    border-radius: var(--r);
+    background: linear-gradient(red, yellow, red) border-box;
+    --corner: conic-gradient(from -90deg at var(--c) var(--c), red 25%, #0000 0)
+      0 0 / calc(100% - var(--c)) calc(100% - var(--c)) border-box;
+    --inner: conic-gradient(red 0 0) padding-box;
+    -webkit-mask: var(--corner), var(--inner);
+    -webkit-mask-composite: source-out;
+    mask: var(--corner) subtract, var(--inner);
+    content: "";
+  }
+}
+body {
+  background: linear-gradient(to bottom, #333333, #000000);
+}
+
+@font-face {
+  font-family: "CustomFont2";
+  src: url("/Anta-Regular.ttf") format("truetype");
+}
+.writing-font {
+  font-family: "CustomFont2", sans-serif;
 }
