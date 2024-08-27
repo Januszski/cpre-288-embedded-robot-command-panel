@@ -20,4 +20,4 @@ You can start editing the page by modifying `app/page.js`. The page auto-updates
 
 
 
-cpre 288 final gui including display and history of IR scans as well as /grid page displaying compass showing robot orientation and a grid that displays the robot and its movement and interprets the IR scans to place longstanding pillars on the grid relative to the robots position to give the user a mapping of the field
+cpre 288 final gui including display and history of IR scans as well as /grid page displaying compass showing robot orientation and a grid that displays the robot and its movement and interprets the IR scans to place longstanding pillars on the grid relative to the robots position to give the user a mapping of the field, made this in 1 all nighter so code quality not great
